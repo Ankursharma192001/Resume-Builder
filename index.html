@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This is how we will link our style file with html file -->
+    <link rel="stylesheet" href="/style.css">
+
+    <title>Resume Builder</title>
+</head>
+
+<body>
+    <!-- Here goes my mark up -->
+
+    <!-- This is for main heading of the page and rights -->
+    <div class="header" id="cv-form">
+
+        <h1>Resume Builder</h1>
+        <h4>By &#169; Ankur Sharma</h4>
+
+
+        <!-- Now i am going to divide the page into two halfs inside the container class -->
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-1">
+
+                    <!-- This is first column -->
+                    <h3>Personal Information</h3>
+
+                    <!-- in first column my first field is for name -->
+
+                    <div class="form-group">
+                        <label for="nameField">Your Name</label>
+                        <input type="text" id="nameField" placeholder="Enter Your Name" class="form-control">
+                    </div>
+                    <!-- in first column second field in contact number -->
+                    <div class="form-group">
+                        <label for="contactField">Your Contact Number</label>
+                        <input type="tel" id="contactField" placeholder="Enter Your Phone Number" class="form-control">
+                    </div>
+                    <!-- in first column third field in address -->
+
+                    <div class="form-group">
+                        <label for="addressField">Your Address</label>
+                        <textarea id="addressField" class="form-control" placeholder="Enter Your Address"
+                            rows="10"></textarea>
+                    </div>
+
+                    <p>Important Links</p>
+
+                    <!-- Now we will add links of linkedin,codeforces,github and all -->
+                    <div class="form-group">
+                        <label for="gtField">Github</label>
+                        <input type="text" id="GitField" placeholder="Enter Link" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="liField">linkedin </label>
+                        <input type="text" id="LinkedField" placeholder="Enter Link" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="cdField">Codeforces</label>
+                        <input type="text" id="CodeforcesField" placeholder="Enter Link" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-2">
+
+                    <!-- This is second column -->
+                    <h3>Professional Information</h3>
+
+                    <!-- in this we will add objective experience and educational qualification -->
+                    <!-- objective -->
+                    <div class="form-group">
+                        <label for="">Objective</label>
+                        <textarea id="ObjectiveField" class="form-control weField" placeholder="Write about your carrer objective"></textarea>
+                    </div>
+
+
+
+                    <!-- Work Experience -->
+
+
+                    <div class="form-group" id="we">
+                        <label for="">Work Experience</label>
+                        <textarea class="form-control weField"
+                            placeholder="Write about work experience here"></textarea>
+
+
+                        <!-- new text area for Work experience will come here dynamically -->
+
+                        <div class="container" id="weAddButton">
+                            <button onclick="addNewWEField()" class="btn">Add</button>
+
+                        </div>
+                    </div>
+
+
+
+                    <!-- Education -->
+                    <div class="form-group" id="aq">
+                        <label for="">Academic Qualifaction</label>
+                        <textarea class="form-control eqField" placeholder="Write about academics here"></textarea>
+                        <div class="container" id="aqAddButton">
+                            <button onclick="AddNewAQField()" class="btn">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container">
+                <button onclick="generateCV()" class="Finalbutton">Build Resume</button>
+            </div>
+        </div>
+
+
+        <!-- linking the javascript file -->
+    </div>
+
+
+    <div class="container" id="cv-template">
+        <div class="row">
+            <div class="col-1">
+                <!-- this is column 1 -->
+
+                <!-- in this is column first of all we will add image -->
+
+                <img class="myimage"
+                    src="https://previews.123rf.com/images/apoev/apoev2107/apoev210700033/171405527-default-avatar-photo-placeholder-gray-profile-picture-icon-business-man-illustration.jpg"
+                    alt="This is a profile img">
+                <div class="container background">
+                    <p id="nameT1">Ankur Sharma</p>
+                    <p id="contactT">54908543544</p>
+                    <p id="addressT">Sector-6 Madhav Nagar New Delhi, india</p>
+                    <hr>
+                    <p>
+                        <a id="giT" href="#1">https://github.com/</a>
+                    </p>
+                    <p>
+                        <a id="liT" href="#1">https://linkedin.com/</a>
+                    </p>
+                    <p> <a id="cfT" href="#1">https://codeforces.com/</a>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="col-2">
+
+                <!-- this is column 2 -->
+                <!-- Name  -->
+                <h1 id="nameT2" style="font-weight: 980" >Ankur Sharma</h1>
+
+
+                <!-- objective card -->
+                <div class="card">
+                    <div class="card-header">
+                     <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                    <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam autem corporis, eaque et impedit, in, laboriosam reprehenderit voluptatem magni debitis ipsam harum quis quod voluptas totam pariatur expedita sint? Voluptas veritatis in minima consectetur molestiae cumque ipsa deleniti, beatae ad nihil harum porro nemo expedita ex inventore eveniet ea neque.</p>
+                    </div>
+                </div>
+                <!-- work experience -->
+                <div class="card">
+                    <div class="card-header">
+                     <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                     <ul id="weT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, quas?</li>
+                     </ul>
+                    </div>
+                </div>
+
+                <!-- Academic Qualification -->
+
+                <div class="card">
+                    <div class="card-header">
+                     <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                     <ul id="aeT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, quas?</li>
+                     </ul>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <button onclick="PrintResume()" class="btn">Print Resume</button>
+                </div>
+                 
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
